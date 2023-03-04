@@ -5,6 +5,7 @@ let i = 1;
 const tiposDePokemon = ['grass', 'fire', 'water', 'normal', 'dragon', 'rock', 'poison', 'ground', 'fighting', 'electric', 'flying', 'fairy', 'dark', 'ice', 'steel', 'psychic', 'bug', 'ghost']
 let resultado = '';
 
+//Declaracion de funcion asincrona con metodo Fectch para consumo de API Pokemon
 let fetchDatos = async (id) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     if (response.status !== 200) {
@@ -24,6 +25,7 @@ let fetchDatos = async (id) => {
     return data;
 };
 
+//Declaracion de funcion con llamada a funcion asincrona (Fetch API) y funcion tipos de Pokemon para obtencion y renderizacion de datos de pokemon
 const numAleatorio = () => {
     let numero = Math.floor((Math.random() * 905) + 1);
     i = numero;
@@ -78,6 +80,7 @@ const numAleatorio = () => {
 
 }
 
+//Declaracion de funcion de tipos de pokemon
 const pokemonTipo = function (tipo, tipos) {
     let imagenTipo = document.getElementById('tipo');
     for (let i = 0; i < tipo.length; i++) {
@@ -91,5 +94,5 @@ const pokemonTipo = function (tipo, tipos) {
     }
 }
 
-
+//Llamada a funcion de pokemon aleatorios mediante evento click
 boton.addEventListener('click', numAleatorio);
