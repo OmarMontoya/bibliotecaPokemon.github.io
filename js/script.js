@@ -1,3 +1,4 @@
+//Inicializacion de variables globales
 let pokemonData = document.getElementById('pokemonCard');
 const boton = document.getElementById('botonPokebola');
 let pokemon = {};
